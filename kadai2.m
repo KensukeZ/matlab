@@ -1,0 +1,30 @@
+clear;
+
+ORG=imread('hinoarashi.jpg'); % Œ´‰æ‘œ‚Ì“ü—Í
+ORG = rgb2gray(ORG); colormap(gray); colorbar;
+imagesc(ORG); axis image; % ‰æ‘œ‚Ì•\Ž¦
+pause; % ˆêŽž’âŽ~
+
+% ‚QŠK’²‰æ‘œ‚Ì¶¬
+IMG = ORG>128;
+imagesc(IMG); colormap(gray); colorbar; axis image;
+pause;
+
+% ‚SŠK’²‰æ‘œ‚Ì¶¬
+IMG0 = ORG>64;
+IMG1 = ORG>128;
+IMG2 = ORG>192;
+IMG = IMG0 + IMG1 + IMG2;
+imagesc(IMG); colormap(gray); colorbar; axis image;
+pause;
+
+% ‚WŠK’²‚É‚Â‚¢‚Ä‚ÍCŠeŽ©ŒŸ“¢‚µ‚Ä‚­‚¾‚³‚¢
+IMG0 = ORG>32;
+IMG1 = ORG>64;
+IMG2 = ORG>96;
+IMG3 = ORG>128;
+IMG4 = ORG>160;
+IMG5 = ORG>196;
+IMG6 = ORG>228;
+IMG = IMG0 + IMG1 + IMG2 + IMG3 + IMG4 + IMG5 + IMG6;
+imagesc(IMG); colormap(gray); colorbar; axis image;
